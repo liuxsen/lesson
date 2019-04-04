@@ -1,5 +1,5 @@
+import { hot } from 'react-hot-loader/root'
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 
 import FunctionComponents from './components/function_components'
 import ClassComponents from './components/class_components'
@@ -32,4 +32,4 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'))
+export default hot(App)
