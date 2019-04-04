@@ -1,9 +1,5 @@
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
-class App extends Component {
-  render() {
-    return <div>hello,react</div>
-  }
-}
+import React from 'react'
+import { hot } from 'react-hot-loader/root'
 
-ReactDOM.render(<App />, document.getElementById('app'))
+const App = () => <div>Hello World!</div>
+export default hot(App)

@@ -11,5 +11,5 @@ module.exports = {
   ],
   // transform-class-properties  https://www.babeljs.cn/docs/babel-plugin-transform-class-properties
   // 'react-hot-loader/babel',
-  plugins: ['transform-class-properties']
+  plugins: ['transform-class-properties', 'react-hot-loader/babel']
 }
