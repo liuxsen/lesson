@@ -22,7 +22,8 @@ const config = {
       {
         test: /.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        // eslint 先检查源码风格，如果不符合规范，会通过webpack，输出到前端页面，否则再通过babel-loader
+        loader: ['babel-loader', 'eslint-loader']
       },
       {
         test: /.css?$/,
