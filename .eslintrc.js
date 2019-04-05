@@ -17,11 +17,13 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module'
   },
-  plugins: ['react'],
+  plugins: ['react', 'react-hooks'],
   rules: {
     // 关闭函数括号之前有空格校验
     'space-before-function-paren': 'off',
     // 不校验react组件 proptyes
-    'react/prop-types': 0
+    'react/prop-types': 0,
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn'
   }
 }
