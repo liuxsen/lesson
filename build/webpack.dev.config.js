@@ -9,6 +9,10 @@ module.exports = merge(baseConfig, {
     hot: true,
     port: 8085,
     historyApiFallback: true,
+    overlay: {
+      warnings: true,
+      errors: true
+    },
     proxy: {
       '/': {
         target: 'https://cnodejs.org/api/v1',
