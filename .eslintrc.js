@@ -21,6 +21,7 @@ module.exports = {
   },
   plugins: ['typescript', 'react', 'react-hooks'],
   rules: {
+    'no-debugger': 'off',
     // 关闭函数括号之前有空格校验
     'space-before-function-paren': 'off',
     // 不校验react组件 proptyes

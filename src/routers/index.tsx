@@ -1,13 +1,16 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
 import Home from '../views/Home'
 import Detail from '../views/Detail'
 import About from '../views/About'
+import NotFund from '../views/NotFund'
 
 function RouteWithSubRoutes(route: any) {
   console.log(route)
   return (
     <Route
+      exact={route.exact || false}
       path={route.path}
       render={props => (
         // pass the sub-routes down to keep nesting
@@ -17,9 +20,10 @@ function RouteWithSubRoutes(route: any) {
   )
 }
 
-const routes = [
+const routerList = [
   {
     path: '/',
+    exact: true,
     component: Home,
     routes: [
       {
@@ -33,7 +37,23 @@ const routes = [
         ]
       }
     ]
+  },
+  {
+    path: '/404',
+    component: NotFund
   }
 ]
 
-export { routes, RouteWithSubRoutes }
+function RouterList() {
+  return (
+    <Router>
+      <Switch>
+        {routerList.map((route, i) => {
+          return <RouteWithSubRoutes key={i} {...route} />
+        })}
+      </Switch>
+    </Router>
+  )
+}
+
+export { RouterList, RouteWithSubRoutes }
