@@ -1,8 +1,10 @@
 module.exports = {
+  parser: 'typescript-eslint-parser',
   env: {
     browser: true,
     es6: true
   },
+
   extends: ['standard', 'plugin:react/recommended'],
   globals: {
     Atomics: 'readonly',
@@ -17,7 +19,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module'
   },
-  plugins: ['react', 'react-hooks'],
+  plugins: ['typescript', 'react', 'react-hooks'],
   rules: {
     // 关闭函数括号之前有空格校验
     'space-before-function-paren': 'off',

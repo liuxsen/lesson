@@ -15,7 +15,7 @@ const config = {
     mainFiles: ['index'],
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     // 自己解决后缀名解析
-    extensions: ['.js', '.jsx']
+    extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
   module: {
     rules: [
@@ -24,6 +24,12 @@ const config = {
         exclude: /node_modules/,
         // eslint 先检查源码风格，如果不符合规范，会通过webpack，输出到前端页面，否则再通过babel-loader
         loader: ['babel-loader', 'eslint-loader']
+      },
+      {
+        test: /.tsx?$/,
+        exclude: /node_modules/,
+        // eslint 先检查源码风格，如果不符合规范，会通过webpack，输出到前端页面，否则再通过babel-loader
+        loader: ['ts-loader', 'eslint-loader']
       },
       {
         test: /.css?$/,

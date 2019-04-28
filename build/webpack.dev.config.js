@@ -14,7 +14,7 @@ module.exports = merge(baseConfig, {
       errors: true
     },
     proxy: {
-      '/': {
+      '/api/v1': {
         target: 'https://cnodejs.org/api/v1',
         changeOrigin: true
       }
