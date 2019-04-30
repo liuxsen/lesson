@@ -2,12 +2,16 @@ import React from 'react'
 import * as Style from './style'
 import { TypeList } from '../../containers/Home/state'
 import { getDateDiff } from '../../utils'
+import Loading from '../Loading'
 interface ListProps {
   data: TypeList[]
+  loading: boolean
 }
+
 export default function List(props: ListProps) {
   return (
-    <div>
+    <div className="vh-parent">
+      {<Loading show={props.loading} />}
       {props.data &&
         props.data.map((item, i) => {
           return (

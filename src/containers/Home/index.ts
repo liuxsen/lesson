@@ -5,14 +5,6 @@ import { TypeDefaultState, defaultStat } from './state'
 import * as actions from './actions'
 import { getTopicList } from '../../api'
 
-// // export const HomeReducers = reducres
-
-// export const homeReducers = reducres
-
-// export const homeActions = actions
-
-// 抛出 connect 方法
-
 const mapStateToProps = (state: any) => {
   return {
     data: state.home
@@ -27,6 +19,7 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>) => {
   }
 }
 
+// 抛出 connect 方法
 export default connect(
   mapStateToProps,
   mapDispatchToProps

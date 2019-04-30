@@ -1,19 +1,18 @@
 import { getTopicList } from '../../api'
 import { Dispatch } from 'redux'
 import * as types from './types'
+import createAsyncAction from '../create-async-action'
+// export const initListAction = (options: getTopicList) => {
+//   return (dispatch: Dispatch) => {
+//     return getTopicList(options).then(res => {
+//       dispatch({
+//         type: types.INIT_LIST,
+//         data: res.data
+//       })
+//     })
+//   }
+// }
 
 export const initListAction = (options: getTopicList) => {
-  return (dispatch: Dispatch) => {
-    return getTopicList(options).then(res => {
-      dispatch({
-        type: types.INIT_LIST,
-        data: res.data
-      })
-    })
-  }
+  return createAsyncAction(types.INIT_LIST, options, getTopicList)
 }
-
-// // 抛出actions函数的类型以供mapDispatchToProps使用
-// export interface HomeActionsType {
-//   initListActions: Function
-// }

@@ -17,11 +17,15 @@ export interface TypeList {
   author: TypeAuthor
 }
 export interface TypeDefaultState {
+  loading: boolean
   type: string
+  err: {}
   list: TypeList[]
 }
 
 export const defaultStat: TypeDefaultState = {
+  loading: false,
+  err: {},
   type: 'all',
   list: [] // 保存列表页数据
 }

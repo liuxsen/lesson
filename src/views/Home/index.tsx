@@ -47,7 +47,7 @@ export class Home extends Component<HomeProps> {
           <style.Sidebar className="bg-red">123</style.Sidebar>
           <style.Content>
             <TopNav />
-            <List data={props.data.list} />
+            <List loading={props.data.loading} data={props.data.list} />
           </style.Content>
         </style.Main>
         <Copyright />

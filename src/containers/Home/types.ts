@@ -1,2 +1,5 @@
 export const INIT_LIST = 'home/init_list'
 export const CHANGE_TYPE = 'home/change_type'
+export const PENDING = 'home/pending'
+export const SUCCESS = 'home/success'
+export const REJECT = 'home/reject'

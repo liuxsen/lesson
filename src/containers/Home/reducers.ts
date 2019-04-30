@@ -8,7 +8,23 @@ export default function HomeReducer(state = defaultStat, actions: any) {
     case types.INIT_LIST:
       return {
         ...state,
-        list: actions.data
+        list: actions.payload
+      }
+    case types.PENDING:
+      return {
+        ...state,
+        loading: true
+      }
+    case types.SUCCESS:
+      return {
+        ...state,
+        loading: false
+      }
+    case types.REJECT:
+      return {
+        ...state,
+        loading: false,
+        err: actions.payload
       }
     default:
       return defaultStat
