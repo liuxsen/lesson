@@ -1,3 +1,5 @@
+import search from '../../static/img/search.png'
+
 import styled from 'styled-components'
 export const NavBar = styled.div`
   margin-bottom: 0;
@@ -6,6 +8,7 @@ export const NavBar = styled.div`
   position: relative;
   background: #444;
   font-size: 13px;
+  padding: 5px;
 `
 
 export const Wrapper = styled.div`
@@ -35,6 +38,24 @@ export const NavSearch = styled.input`
   font-size: 13px;
   font-weight: 400;
   line-height: 1;
+  padding-left: 12px;
+  background: #888 url(${search}) no-repeat 4px center;
+  border-radius: 15px;
+  width: 206px;
+  padding: 3px 0px 3px 25px;
+  height: 20px;
+  margin-top: 10px;
+  color: #fff;
+  transition: ease-in 500ms;
+  &:hover {
+    background-color: #fefefe;
+    color: #333;
+  }
+  &:focus {
+    background-color: #fefefe;
+    outline-width: 0;
+    color: #333;
+  }
 `
 export const NavItem = styled.li`
   list-style-type: none;

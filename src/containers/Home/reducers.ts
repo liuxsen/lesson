@@ -1,16 +1,16 @@
 import * as types from './types'
 
-import { defaultStatus } from './state'
+import { defaultStat } from './state'
 
-export default (state = defaultStatus, actions: any) => {
+export default function HomeReducer(state = defaultStat, actions: any) {
   const type = actions.type
   switch (type) {
     case types.INIT_LIST:
       return {
         ...state,
-        list: actions.payload
+        list: actions.data
       }
     default:
-      return defaultStatus
+      return defaultStat
   }
 }

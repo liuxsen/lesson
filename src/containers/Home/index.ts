@@ -1,5 +1,9 @@
-// import reducres from './reducers'
-// import * as actions from './actions'
+import reducres from './reducers'
+import { ThunkDispatch } from 'redux-thunk'
+import { connect } from 'react-redux'
+import { TypeDefaultState, defaultStat } from './state'
+import * as actions from './actions'
+import { getTopicList } from '../../api'
 
 // // export const HomeReducers = reducres
 
@@ -7,4 +11,23 @@
 
 // export const homeActions = actions
 
-import Home from '../../views/Home'
+// 抛出 connect 方法
+
+const mapStateToProps = (state: any) => {
+  return {
+    data: state.home
+  }
+}
+
+const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>) => {
+  return {
+    initListAction: (options: getTopicList) => {
+      dispatch(actions.initListAction(options))
+    }
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)

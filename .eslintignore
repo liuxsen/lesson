@@ -1,2 +1,4 @@
 dist/*.js
 *.d.ts
+*.ts
+*.tsx
