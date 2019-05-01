@@ -41,7 +41,7 @@ export default function List(props: ListProps) {
                   {getDateDiff(item.last_reply_at)}
                 </div>
               </div>
-              <div className="">{item.title}</div>
+              <Style.Title>{item.title}</Style.Title>
             </Style.ListItem>
           )
         })}

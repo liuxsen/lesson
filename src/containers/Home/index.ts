@@ -1,7 +1,6 @@
 import reducres from './reducers'
 import { ThunkDispatch } from 'redux-thunk'
 import { connect } from 'react-redux'
-import { TypeDefaultState, defaultStat } from './state'
 import * as actions from './actions'
 import { getTopicList } from '../../api'
 

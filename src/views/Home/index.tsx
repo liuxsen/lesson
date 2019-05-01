@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { RouteComponentProps } from 'react-router-dom'
 import connect from '../../containers/Home'
-import Header from '../../components/Header'
-import Copyright from '../../components/Copyright'
 import List from '../../components/List'
 import * as style from './style'
 import TopNav from '../../components/TopNav'
@@ -20,7 +18,7 @@ export interface HomeProps extends HomeRouteProp {
 
 export class Home extends Component<HomeProps> {
   componentDidMount() {
-    this.fetchList(this.props.match.params.type)
+    // this.fetchList(this.props.match.params.type)
   }
   componentWillReceiveProps(nextProps: HomeProps) {
     if (this.props.match.url !== nextProps.match.url) {
@@ -41,16 +39,9 @@ export class Home extends Component<HomeProps> {
   render() {
     const props: any = this.props
     return (
-      <div style={{ background: '#e1e1e1' }}>
-        <Header />
-        <style.Main>
-          <style.Sidebar className="bg-red">123</style.Sidebar>
-          <style.Content>
-            <TopNav />
-            <List loading={props.data.loading} data={props.data.list} />
-          </style.Content>
-        </style.Main>
-        <Copyright />
+      <div>
+        <TopNav />
+        {/* <List loading={props.data.loading} data={props.data.list} /> */}
       </div>
     )
   }

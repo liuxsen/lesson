@@ -25,7 +25,7 @@ export interface TypeLoadingComponentProps {
 }
 export default function Loading(props: TypeLoadingComponentProps) {
   return (
-    <CSSTransition in={props.show} timeout={300} classNames="fadein" unmountOnExit>
+    <CSSTransition in={props.show} timeout={300} classNames="fade" unmountOnExit>
       <LoadingStyle>
         <img src={LoadingSvg} />
       </LoadingStyle>

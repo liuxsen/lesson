@@ -35,3 +35,8 @@ export const Tag = styled.div`
   display: inline-block;
   line-height: 14px;
 `
+export const Title = styled.div`
+  :hover {
+    text-decoration: underline;
+  }
+`
