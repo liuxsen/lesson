@@ -18,16 +18,14 @@ export interface HomeProps extends HomeRouteProp {
 
 export class Home extends Component<HomeProps> {
   componentDidMount() {
-    // this.fetchList(this.props.match.params.type)
+    this.fetchList(this.props.match.params.type)
   }
   componentWillReceiveProps(nextProps: HomeProps) {
     if (this.props.match.url !== nextProps.match.url) {
       this.fetchList(nextProps.match.params.type)
     }
   }
-  componentDidUpdate() {
-    // this.fetchList()
-  }
+  componentDidUpdate() {}
   fetchList = (type: string) => {
     const props: any = this.props
     props.initListAction({
@@ -41,7 +39,7 @@ export class Home extends Component<HomeProps> {
     return (
       <div>
         <TopNav />
-        {/* <List loading={props.data.loading} data={props.data.list} /> */}
+        <List loading={props.list.loading} data={props.list.data} />
       </div>
     )
   }

@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
-export const TopWraper = styled.ul`
+export const TopWraper = styled.div`
   padding: 10px;
   background-color: #f6f6f6;
   border-radius: 3px 3px 0 0;
 `
 
-export const TopNavItem = styled.li`
+export const TopNavItem = styled.div`
   margin: 0 10px;
   color: #80bd01;
   list-style: none;

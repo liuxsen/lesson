@@ -3,10 +3,29 @@ body {
   margin: 0;
   padding: 0;
   font-size: 14px;
+  overflow-x: hidden;
 }
 
 ul,
+ol,
 li {
   margin: 0;
   padding: 0;
+  margin: 0 0 10px 25px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.bg-btn-color {
+  background-color: #80bd01;
+}
+
+.bg-btn-disable {
+  background-color: #eaeaea;
+}
+
+.cs-pt {
+  cursor: pointer;
 }

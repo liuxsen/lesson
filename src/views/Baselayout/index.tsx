@@ -13,7 +13,9 @@ const Baselayout = function({ component: Component, ...rest }: any) {
           <Header />
           <style.Main>
             <style.Sidebar className="bg-red">123</style.Sidebar>
-            <Component {...matchProps} />
+            <div className="mr-300">
+              <Component {...matchProps} />
+            </div>
             <style.Content />
           </style.Main>
           <Copyright />

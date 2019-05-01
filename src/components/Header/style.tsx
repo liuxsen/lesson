@@ -57,7 +57,7 @@ export const NavSearch = styled.input`
     color: #333;
   }
 `
-export const NavItem = styled.li`
+export const NavItem = styled.div`
   list-style-type: none;
   color: #ccc;
   float: left;

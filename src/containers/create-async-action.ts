@@ -2,10 +2,11 @@ import { Dispatch } from 'redux'
 import * as types from './Home/types'
 
 export default function createAsyncAction(type: string, options: any, asyncAction: Function) {
-  const TYPE_NAME = type.split('/')[0]
-  const SUCCESS_TYPE = TYPE_NAME + '/success'
-  const PENDING_TYPE = TYPE_NAME + '/pending'
-  const REJECT_TYPE = TYPE_NAME + '/reject'
+  const MODEL_NAME = type.split('/')[0]
+  const TYPE_NAME = type.split('/')[1]
+  const SUCCESS_TYPE = MODEL_NAME + '/' + TYPE_NAME + '/success'
+  const PENDING_TYPE = MODEL_NAME + '/' + TYPE_NAME + '/pending'
+  const REJECT_TYPE = MODEL_NAME + '/' + TYPE_NAME + '/reject'
   return (dispatch: Dispatch) => {
     dispatch({
       type: PENDING_TYPE
@@ -15,10 +16,17 @@ export default function createAsyncAction(type: string, options: any, asyncActio
         dispatch({
           type: SUCCESS_TYPE
         })
-        dispatch({
-          type,
-          payload: res.data
-        })
+        if (res.success) {
+          dispatch({
+            type,
+            payload: res.data
+          })
+        } else {
+          dispatch({
+            type: REJECT_TYPE,
+            payload: res
+          })
+        }
       })
       .catch((err: any) => {
         dispatch({

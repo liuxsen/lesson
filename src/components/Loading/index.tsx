@@ -15,9 +15,9 @@ const LoadingStyle = styled.div`
   text-align: center;
   & > img {
     left: 50%;
-    top: 50%;
+    top: 10px;
     position: absolute;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
   }
 `
 export interface TypeLoadingComponentProps {

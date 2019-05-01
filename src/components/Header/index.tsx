@@ -3,10 +3,14 @@ import React, { Component } from 'react'
 import * as Style from './style'
 import Logo from '../../static/img/cnodejs_light.svg'
 import { navs } from './nav'
+import { withRouter, RouteComponentProps } from 'react-router'
 
-export default class Header extends Component {
+class Header extends Component<RouteComponentProps> {
   handleChange = (e: any) => {
     console.log(e.target.value)
+  }
+  handleNav = (path: string) => {
+    this.props.history.push(path)
   }
   render() {
     return (
@@ -19,14 +23,18 @@ export default class Header extends Component {
             <form className="fl-left">
               <Style.NavSearch onChange={this.handleChange} />
             </form>
-            <ul className="ovfl-hd fl-right">
+            <div className="ovfl-hd mt-10 fl-right">
               {navs.map((nav, i) => (
-                <Style.NavItem key={i}>{nav.title}</Style.NavItem>
+                <Style.NavItem onClick={() => this.handleNav(nav.path)} key={i}>
+                  {nav.title}
+                </Style.NavItem>
               ))}
-            </ul>
+            </div>
           </Style.Wrapper>
         </Style.NavBar>
       </div>
     )
   }
 }
+
+export default withRouter(Header)
